@@ -51,55 +51,6 @@ git clone https://github.com/demonstalker86/mouse-toggle-counter.git
 
 5. Left-click in the Game window to start the counter
 
-## Full Script Code
-
-**Assets/Scripts/MouseToggleCounter.cs**
-
-using UnityEngine;
-using System.Collections;
-using TMPro;
-
-public class MouseToggleCounter : MonoBehaviour
-{
-[SerializeField] private TextMeshProUGUI counterText;
-private int counterValue = 0;
-private bool isCounting = false;
-
-private void Start()
-{
-if (counterText != null)
-counterText.text = "Counter: " + counterValue;
-}
-
-private void Update()
-{
-if (Input.GetMouseButtonDown(0))
-{
-if (isCounting)
-{
-isCounting = false;
-}
-else
-{
-isCounting = true;
-StartCoroutine(CountCoroutine());
-}
-}
-}
-
-private IEnumerator CountCoroutine()
-{
-while (isCounting)
-{
-yield return new WaitForSeconds(0.5f);
-counterValue++;
-
-if (counterText != null)
-counterText.text = "Counter: " + counterValue;
-}
-}
-}
-
 ## Scene Setup
 
 - Create UI -> Text - TextMeshPro
