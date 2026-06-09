@@ -1,3 +1,7 @@
+![Unity](https://img.shields.io/badge/Unity-6000.4.5f1-black?logo=unity)
+![License](https://img.shields.io/badge/License-MIT-green)
+![C#](https://img.shields.io/badge/C%23-Coroutines-purple)
+
 # Mouse Toggle Counter
 
 A simple counter for Unity controlled by mouse clicks.
