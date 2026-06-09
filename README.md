@@ -2,7 +2,7 @@
 
 Простой счетчик для Unity с управлением по клику мыши.
 
-## 🎮 Управление
+## Управление
 
 | Действие | Результат |
 |----------|-----------|
@@ -10,43 +10,37 @@
 | Левый клик мыши | Остановка счетчика |
 | Повторный клик | Продолжение с того же значения |
 
-## 🛠️ Технологии
+## Технологии
 
-- **Unity** 6000.4.5f1
-- **C#** Coroutines
-- **TextMeshPro** для отображения текста
+- Unity 6000.4.5f1
+- C# Coroutines
+- TextMeshPro
 
-## 📁 Структура проекта
+## Структура проекта
 
 mouse-toggle-counter/
 ├── Assets/
-│ ├── Scenes/ # Папка со сценами
+│ ├── Scenes/
 │ │ └── SampleScene.unity
-│ ├── Scripts/ # Папка со скриптами
+│ ├── Scripts/
 │ │ └── MouseToggleCounter.cs
-│ ├── Settings/ # Настройки проекта
-│ └── TextMeshPro/ # Ресурсы TextMeshPro
-├── Packages/ # Папка с пакетами (создается автоматически)
-├── ProjectSettings/ # Настройки проекта
+│ ├── Settings/
+│ └── TextMeshPro/
+├── Packages/
+├── ProjectSettings/
 └── README.md
 
-## 🚀 Установка и запуск
+## Установка и запуск
 
-1. Клонируйте репозиторий:
-```bash
-https://github.com/demonstalker86/mouse-toggle-counter
-
+1. Клонируйте репозиторий
 2. Откройте проект в Unity 6000.4.5f1
-
 3. Откройте сцену Assets/Scenes/SampleScene.unity
+4. Нажмите Play
+5. Кликните левой кнопкой мыши
 
-4. Нажмите кнопку Play
+## Код скрипта
 
-5. Кликните левой кнопкой мыши в окне Game для запуска счетчика
-
-Assets/Scripts/MouseToggleCounter.cs
-
-csharp
+```csharp
 using UnityEngine;
 using System.Collections;
 using TMPro;
@@ -68,9 +62,7 @@ public class MouseToggleCounter : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (_isCounting)
-            {
                 _isCounting = false;
-            }
             else
             {
                 _isCounting = true;
@@ -85,33 +77,22 @@ public class MouseToggleCounter : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             _counterValue++;
-
+            
             if (_counterText != null)
                 _counterText.text = $"Счётчик: {_counterValue}";
         }
     }
 }
 
-🔧 Настройка сцены
+Настройка сцены
 
-1. Создайте UI → Text - TextMeshPro
+1.Создайте UI → Text - TextMeshPro
+2.Создайте Create Empty → назовите CounterController
+3.Добавьте скрипт на CounterController
+4.Перетащите TextMeshPro в поле _counterText
 
-2. Создайте Create Empty и назовите CounterController
-
-3. Добавьте скрипт MouseToggleCounter на CounterController
-
-4. Перетащите TextMeshPro в поле _counterText в инспекторе
-
-✨ Особенности кода
-
-Нет лишних переменных
-
-Корутина останавливается автоматически
-
-Значение счетчика сохраняется между запусками
-
-📄 Лицензия
+Лицензия
 MIT
 
-👤 Автор
+Автор
 demonstalker
