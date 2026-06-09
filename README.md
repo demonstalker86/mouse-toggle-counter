@@ -1,8 +1,8 @@
-# Mouse Toggle Counter 🖱️
+# Mouse Toggle Counter
 
 Счетчик переключений мыши. Простой счетчик для Unity с управлением мышью.
 
-## 🎮 Управление
+## Управление
 
 | Действие | Результат |
 |----------|-----------|
@@ -10,13 +10,14 @@
 | Левый клик мыши | Остановка счетчика |
 | Повторный клик | Продолжение с того же значения |
 
-## 🛠️ Технологии
+## Технологии
 
-- **Unity** 6000.4.5f1
-- **Корутины** на C#
-- **TextMeshPro** для отображения текста
+- Unity 6000.4.5f1
+- Корутины на C#
+- TextMeshPro для отображения текста
 
-## 📁 Структура проекта
+## Структура проекта
+
 mouse-toggle-counter/
 ├── Assets/
 │ ├── Scripts/
@@ -36,11 +37,11 @@ mouse-toggle-counter/
 └── README.md
 
 
-## 🚀 Установка и запуск
+## Установка и запуск
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/ваш-аккаунт/mouse-toggle-counter.git
+git clone https://github.com/demonstalker86/mouse-toggle-counter.git
 Откройте проект в Unity 6000.4.5f1
 
 Откройте сцену Assets/Scenes/SampleScene.unity
@@ -49,7 +50,7 @@ git clone https://github.com/ваш-аккаунт/mouse-toggle-counter.git
 
 Кликните левой кнопкой мыши в окне Game для запуска счетчика
 
-📝 Полный код скрипта
+Полный код скрипта
 Assets/Scripts/MouseToggleCounter.cs
 
 csharp
@@ -98,7 +99,7 @@ public class MouseToggleCounter : MonoBehaviour
     }
 }
 
-🔧 Настройка сцены
+Настройка сцены
 Создайте UI → Text - TextMeshPro
 
 Создайте Create Empty и назовите CounterController
@@ -107,16 +108,16 @@ public class MouseToggleCounter : MonoBehaviour
 
 Перетащите TextMeshPro в поле _counterText в инспекторе
 
-⚙️ Настройки Input System
+Настройки Input System
 Проект работает с любыми настройками Active Input Handling:
 
-✅ Input Manager (Old)
+Input Manager (Old)
 
-✅ Input System Package
+Input System Package
 
-✅ Both
+Both
 
-✨ Особенности кода
+Особенности кода
 Нет лишних переменных
 
 Корутина останавливается автоматически
@@ -125,8 +126,8 @@ public class MouseToggleCounter : MonoBehaviour
 
 Значение счетчика сохраняется между запусками
 
-📄 Лицензия
+Лицензия
 MIT
 
-👤 Автор
+Автор
 demonstalker86
