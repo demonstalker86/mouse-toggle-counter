@@ -35,7 +35,6 @@ mouse-toggle-counter/
 ├── .gitignore
 └── README.md
 
-text
 
 ## 🚀 Установка и запуск
 
