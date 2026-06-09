@@ -8,83 +8,79 @@ A simple counter for Unity controlled by mouse clicks.
 
 ## Controls
 
-| Action | Result |
-|--------|--------|
-| Left mouse click | Start counter |
-| Left mouse click | Stop counter |
-| Next click | Continue from same value |
+Left mouse click - Start counter
+Left mouse click - Stop counter
+Next click - Continue from same value
 
 ## Technologies
 
-- Unity 6000.4.5f1
-- C# Coroutines
-- TextMeshPro for text display
+Unity 6000.4.5f1
+C# Coroutines
+TextMeshPro for text display
 
 ## Project Structure
 
 mouse-toggle-counter/
-├── Assets/
-│ ├── Scripts/
-│ │ └── MouseToggleCounter.cs
-│ ├── Scenes/
-│ │ └── SampleScene.unity
-│ ├── Settings/
-│ │ └── (project settings)
-│ ├── TextMesh Pro/
-│ │ └── (TMP resources)
-│ └── ...
-├── Packages/
-│ └── (Unity packages, created automatically)
-├── ProjectSettings/
-│ └── (project settings)
-├── .gitignore
-└── README.md
+Assets/
+Scripts/
+MouseToggleCounter.cs
+Scenes/
+SampleScene.unity
+Settings/
+(project settings)
+TextMesh Pro/
+(TMP resources)
+Packages/
+(Unity packages, created automatically)
+ProjectSettings/
+(project settings)
+.gitignore
+README.md
 
 ## Installation and Launch
 
-1. Clone the repository:
+Clone the repository:
 git clone https://github.com/demonstalker86/mouse-toggle-counter.git
 
-2. Open the project in Unity 6000.4.5f1
+Open the project in Unity 6000.4.5f1
 
-3. Open the scene Assets/Scenes/SampleScene.unity
+Open the scene Assets/Scenes/SampleScene.unity
 
-4. Press the Play button
+Press the Play button
 
-5. Left-click in the Game window to start the counter
+Left-click in the Game window to start the counter
 
-Full Script Code
+## Full Script Code
 
 Assets/Scripts/MouseToggleCounter.cs
 
-csharp
 using UnityEngine;
 using System.Collections;
 using TMPro;
 
 public class MouseToggleCounter : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _counterText;
-    private int _counterValue = 0;
-    private bool _isCounting = false;
+    [SerializeField] private TextMeshProUGUI counterText;
+    private int counterValue = 0;
+    private bool isCounting = false;
 
     private void Start()
     {
-        if (_counterText != null)
-            _counterText.text = $"Counter: {_counterValue}";
+        if (counterText != null)
+            counterText.text = "Counter: " + counterValue;
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (_isCounting)
+            if (isCounting)
             {
-                _isCounting = false;
+                isCounting = false;
             }
             else
             {
-                _isCounting = true;
+                isCounting = true;
                 StartCoroutine(CountCoroutine());
             }
         }
@@ -92,48 +88,48 @@ public class MouseToggleCounter : MonoBehaviour
 
     private IEnumerator CountCoroutine()
     {
-        while (_isCounting)
+        while (isCounting)
         {
             yield return new WaitForSeconds(0.5f);
-            _counterValue++;
+            counterValue++;
 
-            if (_counterText != null)
-                _counterText.text = $"Counter: {_counterValue}";
+            if (counterText != null)
+                counterText.text = "Counter: " + counterValue;
         }
     }
 }
 
-Scene Setup
+## Scene Setup
 
-1. Create UI → Text - TextMeshPro
+Create UI -> Text - TextMeshPro
 
-2. Create Create Empty and name it CounterController
+Create Create Empty and name it CounterController
 
-3. Add the MouseToggleCounter script to CounterController
+Add the MouseToggleCounter script to CounterController
 
-4. Drag the TextMeshPro element to the _counterText field in the Inspector
+Drag the TextMeshPro element to the counterText field in the Inspector
 
-Input System Settings
+## Input System Settings
+
 The project works with any Active Input Handling settings:
 
-1. Input Manager (Old)
+Input Manager (Old)
+Input System Package
+Both
 
-2. Input System Package
+## Code Features
 
-3. Both
+No extra variables
+Coroutine stops automatically
+No StopCoroutine required
+Counter value persists between starts
 
-Code Features
+## License
 
-1. No extra variables
-
-2. Coroutine stops automatically
-
-3. No StopCoroutine() required
-
-4. Counter value persists between starts
-
-License
 MIT
 
-Author
+## Author
+
 demonstalker86
+
+Click the mouse - the counter works!
