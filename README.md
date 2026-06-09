@@ -1,22 +1,22 @@
 # Mouse Toggle Counter
 
-Счетчик переключений мыши. Простой счетчик для Unity с управлением мышью.
+A simple counter for Unity controlled by mouse clicks.
 
-## Управление
+## Controls
 
-| Действие | Результат |
-|----------|-----------|
-| Левый клик мыши | Запуск счетчика |
-| Левый клик мыши | Остановка счетчика |
-| Повторный клик | Продолжение с того же значения |
+| Action | Result |
+|--------|--------|
+| Left mouse click | Start counter |
+| Left mouse click | Stop counter |
+| Next click | Continue from same value |
 
-## Технологии
+## Technologies
 
 - Unity 6000.4.5f1
-- Корутины на C#
-- TextMeshPro для отображения текста
+- C# Coroutines
+- TextMeshPro for text display
 
-## Структура проекта
+## Project Structure
 
 mouse-toggle-counter/
 ├── Assets/
@@ -25,32 +25,29 @@ mouse-toggle-counter/
 │ ├── Scenes/
 │ │ └── SampleScene.unity
 │ ├── Settings/
-│ │ └── (настройки проекта)
+│ │ └── (project settings)
 │ ├── TextMesh Pro/
-│ │ └── (ресурсы TMP)
+│ │ └── (TMP resources)
 │ └── ...
 ├── Packages/
-│ └── (пакеты Unity, создаются автоматически)
+│ └── (Unity packages, created automatically)
 ├── ProjectSettings/
-│ └── (настройки проекта)
+│ └── (project settings)
 ├── .gitignore
 └── README.md
 
+## Installation and Launch
 
-## Установка и запуск
-
-1. Клонируйте репозиторий:
+1. Clone the repository:
 ```bash
 git clone https://github.com/demonstalker86/mouse-toggle-counter.git
-Откройте проект в Unity 6000.4.5f1
+2.Open the project in Unity 6000.4.5f1
+3.Open the scene Assets/Scenes/SampleScene.unity
+4.Press the Play button
+5.Left-click in the Game window to start the counter
 
-Откройте сцену Assets/Scenes/SampleScene.unity
+Full Script Code
 
-Нажмите кнопку Play
-
-Кликните левой кнопкой мыши в окне Game для запуска счетчика
-
-Полный код скрипта
 Assets/Scripts/MouseToggleCounter.cs
 
 csharp
@@ -67,7 +64,7 @@ public class MouseToggleCounter : MonoBehaviour
     private void Start()
     {
         if (_counterText != null)
-            _counterText.text = $"Счётчик: {_counterValue}";
+            _counterText.text = $"Counter: {_counterValue}";
     }
 
     private void Update()
@@ -94,40 +91,34 @@ public class MouseToggleCounter : MonoBehaviour
             _counterValue++;
 
             if (_counterText != null)
-                _counterText.text = $"Счётчик: {_counterValue}";
+                _counterText.text = $"Counter: {_counterValue}";
         }
     }
 }
 
-Настройка сцены
-Создайте UI → Text - TextMeshPro
+Scene Setup
 
-Создайте Create Empty и назовите CounterController
+1.Create UI → Text - TextMeshPro
+2.Create Create Empty and name it CounterController
+3.Add the MouseToggleCounter script to CounterController
+4.Drag the TextMeshPro element to the _counterText field in the Inspector
 
-Добавьте скрипт MouseToggleCounter на CounterController
+Input System Settings
+The project works with any Active Input Handling settings:
 
-Перетащите TextMeshPro в поле _counterText в инспекторе
+1.Input Manager (Old)
+2.Input System Package
+3.Both
 
-Настройки Input System
-Проект работает с любыми настройками Active Input Handling:
+Code Features
 
-Input Manager (Old)
+1.No extra variables
+2.Coroutine stops automatically
+3.No StopCoroutine() required
+4.Counter value persists between starts
 
-Input System Package
-
-Both
-
-Особенности кода
-Нет лишних переменных
-
-Корутина останавливается автоматически
-
-Не требуется StopCoroutine()
-
-Значение счетчика сохраняется между запусками
-
-Лицензия
+License
 MIT
 
-Автор
+Author
 demonstalker86
