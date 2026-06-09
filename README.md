@@ -1,4 +1,3 @@
-markdown
 # Mouse Toggle Counter
 
 Простой счетчик для Unity с управлением по клику мыши.
@@ -18,6 +17,7 @@ markdown
 - TextMeshPro
 
 ## Структура проекта
+
 mouse-toggle-counter/
 ├── Assets/
 │ ├── Scenes/
@@ -29,8 +29,6 @@ mouse-toggle-counter/
 ├── Packages/
 ├── ProjectSettings/
 └── README.md
-
-text
 
 ## Установка и запуск
 
@@ -85,25 +83,22 @@ public class MouseToggleCounter : MonoBehaviour
         }
     }
 }
+
 Настройка сцены
-Создайте UI -> Text - TextMeshPro
 
-Создайте Create Empty -> назовите CounterController
-
-Добавьте скрипт на CounterController
-
-Перетащите TextMeshPro в поле _counterText
+1.Создайте UI -> Text - TextMeshPro
+2.Создайте Create Empty -> назовите CounterController
+3.Добавьте скрипт на CounterController
+4.Перетащите TextMeshPro в поле _counterText
 
 Особенности
-Нет лишних переменных
 
-Корутина останавливается автоматически
-
-Значение сохраняется между запусками
+1.Нет лишних переменных
+2.Корутина останавливается автоматически
+3.Значение сохраняется между запусками
 
 Лицензия
 MIT
 
 Автор
 demonstalker
-
