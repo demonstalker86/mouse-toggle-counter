@@ -45,10 +45,10 @@ mouse-toggle-counter/
 1. Clone the repository:
 ```bash
 git clone https://github.com/demonstalker86/mouse-toggle-counter.git
-2.Open the project in Unity 6000.4.5f1
-3.Open the scene Assets/Scenes/SampleScene.unity
-4.Press the Play button
-5.Left-click in the Game window to start the counter
+2. Open the project in Unity 6000.4.5f1
+3. Open the scene Assets/Scenes/SampleScene.unity
+4. Press the Play button
+5. Left-click in the Game window to start the counter
 
 Full Script Code
 
@@ -102,24 +102,24 @@ public class MouseToggleCounter : MonoBehaviour
 
 Scene Setup
 
-1.Create UI → Text - TextMeshPro
-2.Create Create Empty and name it CounterController
-3.Add the MouseToggleCounter script to CounterController
-4.Drag the TextMeshPro element to the _counterText field in the Inspector
+1. Create UI → Text - TextMeshPro
+2. Create Create Empty and name it CounterController
+3. Add the MouseToggleCounter script to CounterController
+4. Drag the TextMeshPro element to the _counterText field in the Inspector
 
 Input System Settings
 The project works with any Active Input Handling settings:
 
-1.Input Manager (Old)
-2.Input System Package
-3.Both
+1. Input Manager (Old)
+2. Input System Package
+3. Both
 
 Code Features
 
-1.No extra variables
-2.Coroutine stops automatically
-3.No StopCoroutine() required
-4.Counter value persists between starts
+1. No extra variables
+2. Coroutine stops automatically
+3. No StopCoroutine() required
+4. Counter value persists between starts
 
 License
 MIT
