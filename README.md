@@ -98,6 +98,7 @@ public class MouseToggleCounter : MonoBehaviour
         }
     }
 }
+
 🔧 Настройка сцены
 Создайте UI → Text - TextMeshPro
 
