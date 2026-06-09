@@ -1,6 +1,6 @@
-# Mouse Toggle Counter
+# Mouse Toggle Counter 🖱️
 
-Простой счетчик для Unity с управлением по клику мыши.
+Счетчик переключений мыши. Простой счетчик для Unity с управлением мышью.
 
 ## 🎮 Управление
 
@@ -13,7 +13,7 @@
 ## 🛠️ Технологии
 
 - **Unity** 6000.4.5f1
-- **C#** Coroutines
+- **Корутины** на C#
 - **TextMeshPro** для отображения текста
 
 ## 📁 Структура проекта
@@ -35,6 +35,7 @@ mouse-toggle-counter/
 ├── .gitignore
 └── README.md
 
+text
 
 ## 🚀 Установка и запуск
 
@@ -127,3 +128,5 @@ public class MouseToggleCounter : MonoBehaviour
 📄 Лицензия
 MIT
 
+👤 Автор
+demonstalker86
