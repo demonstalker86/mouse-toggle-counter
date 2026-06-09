@@ -1,3 +1,4 @@
+markdown
 # Mouse Toggle Counter
 
 Простой счетчик для Unity с управлением по клику мыши.
@@ -29,18 +30,17 @@ mouse-toggle-counter/
 ├── ProjectSettings/
 └── README.md
 
+text
 
 ## Установка и запуск
 
 1. Клонируйте репозиторий
 2. Откройте проект в Unity 6000.4.5f1
-3. Откройте сцену `Assets/Scenes/SampleScene.unity`
-4. Нажмите **Play**
+3. Откройте сцену Assets/Scenes/SampleScene.unity
+4. Нажмите Play
 5. Кликните левой кнопкой мыши
 
 ## Код скрипта
-
-**Assets/Scripts/MouseToggleCounter.cs**
 
 ```csharp
 using UnityEngine;
@@ -87,13 +87,13 @@ public class MouseToggleCounter : MonoBehaviour
 }
 
 Настройка сцены
-Создайте UI → Text - TextMeshPro
+Создайте UI -> Text - TextMeshPro
 
-Создайте Create Empty → назовите CounterController
+Создайте Create Empty -> назовите CounterController
 
-Добавьте скрипт MouseToggleCounter на CounterController
+Добавьте скрипт на CounterController
 
-Перетащите TextMeshPro в поле _counterText в инспекторе
+Перетащите TextMeshPro в поле _counterText
 
 Особенности
 Нет лишних переменных
@@ -107,4 +107,3 @@ MIT
 
 Автор
 demonstalker
-
