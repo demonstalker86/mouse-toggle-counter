@@ -17,7 +17,6 @@
 - TextMeshPro
 
 ## Структура проекта
-
 mouse-toggle-counter/
 ├── Assets/
 │ ├── Scenes/
@@ -30,15 +29,18 @@ mouse-toggle-counter/
 ├── ProjectSettings/
 └── README.md
 
+
 ## Установка и запуск
 
 1. Клонируйте репозиторий
 2. Откройте проект в Unity 6000.4.5f1
-3. Откройте сцену Assets/Scenes/SampleScene.unity
-4. Нажмите Play
+3. Откройте сцену `Assets/Scenes/SampleScene.unity`
+4. Нажмите **Play**
 5. Кликните левой кнопкой мыши
 
 ## Код скрипта
+
+**Assets/Scripts/MouseToggleCounter.cs**
 
 ```csharp
 using UnityEngine;
@@ -85,14 +87,24 @@ public class MouseToggleCounter : MonoBehaviour
 }
 
 Настройка сцены
+Создайте UI → Text - TextMeshPro
 
-1.Создайте UI → Text - TextMeshPro
-2.Создайте Create Empty → назовите CounterController
-3.Добавьте скрипт на CounterController
-4.Перетащите TextMeshPro в поле _counterText
+Создайте Create Empty → назовите CounterController
+
+Добавьте скрипт MouseToggleCounter на CounterController
+
+Перетащите TextMeshPro в поле _counterText в инспекторе
+
+Особенности
+Нет лишних переменных
+
+Корутина останавливается автоматически
+
+Значение сохраняется между запусками
 
 Лицензия
 MIT
 
 Автор
 demonstalker
+
