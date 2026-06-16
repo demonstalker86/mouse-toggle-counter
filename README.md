@@ -19,18 +19,28 @@ A simple counter for Unity controlled by mouse clicks.
 - Unity 6000.4.5f1
 - C# Coroutines
 - TextMeshPro for text display
+- Event-driven architecture
+
+## Architecture
+
+The project follows separation of concerns with three main components:
+
+- **InputReader** - Detects mouse clicks and triggers events
+- **Counter** - Manages counting logic and coroutine
+- **CounterView** - Updates UI display based on counter events
 
 ## Project Structure
 
 mouse-toggle-counter/
 ├── Assets/
 │ ├── Scripts/
-│ │ └── MouseToggleCounter.cs
+│ │ ├── InputReader.cs
+│ │ ├── Counter.cs
+│ │ └── CounterView.cs
 │ ├── Scenes/
 │ │ └── SampleScene.unity
 │ ├── Settings/
-│ ├── TextMesh Pro/
-│ └── ...
+│ └── TextMesh Pro/
 ├── Packages/
 ├── ProjectSettings/
 ├── .gitignore
@@ -53,14 +63,26 @@ git clone https://github.com/demonstalker86/mouse-toggle-counter.git
 
 ## Scene Setup
 
-- Create UI -> Text - TextMeshPro
-- Create Empty and name it CounterController
-- Add MouseToggleCounter script to CounterController
-- Drag TextMeshPro to counterText field in Inspector
+1. Create **UI → Text - TextMeshPro**
+
+2. Create an empty GameObject and name it `CounterSystem`
+
+3. Add `InputReader` and `Counter` scripts to `CounterSystem`
+
+4. In `InputReader`, drag the `CounterSystem` object to the `Counter` field
+
+5. Create another empty GameObject and name it `CounterViewObject`
+
+6. Add `CounterView` script to `CounterViewObject`
+
+7. In `CounterView`, drag the TextMeshPro element to the `Counter Text` field
+
+8. In `CounterView`, drag the `CounterSystem` object to the `Counter` field
 
 ## Input System Settings
 
-Works with any Active Input Handling:
+The project works with any `Active Input Handling` settings:
+
 - Input Manager (Old)
 - Input System Package
 - Both
@@ -69,8 +91,9 @@ Works with any Active Input Handling:
 
 - No extra variables
 - Coroutine stops automatically
-- No StopCoroutine required
-- Counter value persists
+- Event-driven communication
+- Clean separation of concerns
+- Counter value persists between starts
 
 ## License
 
