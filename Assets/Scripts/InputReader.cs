@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
-    [SerializeField] private Counter _counter;
+    [SerializeField] private int _clickButtonIndex = 0;
+
+    public event System.Action  Clicked;
         
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(_clickButtonIndex))
         {
-            if (_counter != null)
-            {
-                _counter.ToggleCounting();
-            }
+            Clicked?.Invoke();
         }
     }
 }

@@ -735,6 +735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4ab2fe02f39a84ca9fafb9449b001d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseToggleCounter
+  _inputReader: {fileID: 1759140007}
+  _incrementDelay: 0.5
 --- !u!4 &1759140006
 Transform:
   m_ObjectHideFlags: 0
@@ -762,7 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005ee2e2ba71f06488235144aef2a10d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputReader
-  _counter: {fileID: 1759140005}
+  _clickButtonIndex: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

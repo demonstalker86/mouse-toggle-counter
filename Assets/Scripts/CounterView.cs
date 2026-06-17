@@ -10,7 +10,7 @@ public class CounterView : MonoBehaviour
     {
         if (_counter != null)
         {
-            _counter.OnValueChanged += UpdateDisplay;
+            _counter.ValueIncreased += UpdateDisplay;
         }
     }
 
@@ -18,7 +18,7 @@ public class CounterView : MonoBehaviour
     {
         if (_counter != null)
         {
-            _counter.OnValueChanged -= UpdateDisplay;
+            _counter.ValueIncreased -= UpdateDisplay;
         }
     }
 

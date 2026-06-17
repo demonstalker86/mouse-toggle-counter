@@ -3,12 +3,38 @@ using System.Collections;
 
 public class Counter : MonoBehaviour
 {
-    public int CurrentValue {  get; private set; }
-    public bool IsCounting { get; private set; }
-
-    public System.Action<int> OnValueChanged;
+    [SerializeField] private InputReader _inputReader;
+    [SerializeField] private float _incrementDelay = 0.5f;
 
     private Coroutine _countingCoroutine;
+    private WaitForSeconds _delay;
+
+    public event System.Action<int> ValueIncreased;      
+    public event System.Action<bool> CountingToggled;    
+
+    public int CurrentValue { get; private set; }
+    public bool IsCounting { get; private set; }
+
+    private void Awake()
+    {
+        _delay = new WaitForSeconds(_incrementDelay);
+    }
+
+    private void OnEnable()
+    {
+        if (_inputReader != null)
+        {
+            _inputReader.Clicked += ToggleCounting;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_inputReader != null)
+        {
+            _inputReader.Clicked -= ToggleCounting;
+        }
+    }
 
     public void ToggleCounting()
     {
@@ -27,6 +53,8 @@ public class Counter : MonoBehaviour
         IsCounting = true;
 
         _countingCoroutine = StartCoroutine(CountCoroutine());
+
+        CountingToggled?.Invoke(true);
     }
 
     private void StopCounting()
@@ -39,16 +67,18 @@ public class Counter : MonoBehaviour
 
             _countingCoroutine = null;
         }
+
+        CountingToggled?.Invoke(false);
     }
 
     private IEnumerator CountCoroutine()
     {
         while (IsCounting)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return _delay;
             CurrentValue++;
 
-            OnValueChanged?.Invoke(CurrentValue);
+            ValueIncreased?.Invoke(CurrentValue);  
         }
-    }    
+    }
 }

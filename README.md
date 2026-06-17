@@ -25,8 +25,8 @@ A simple counter for Unity controlled by mouse clicks.
 
 The project follows separation of concerns with three main components:
 
-- **InputReader** - Detects mouse clicks and triggers events
-- **Counter** - Manages counting logic and coroutine
+- **InputReader** - Detects input (configurable button index) and triggers events
+- **Counter** - Manages counting logic, coroutine, and emits events
 - **CounterView** - Updates UI display based on counter events
 
 ## Project Structure
@@ -69,7 +69,7 @@ git clone https://github.com/demonstalker86/mouse-toggle-counter.git
 
 3. Add `InputReader` and `Counter` scripts to `CounterSystem`
 
-4. In `InputReader`, drag the `CounterSystem` object to the `Counter` field
+4. In `Counter` component, drag the `CounterSystem` object to the `Input Reader` field
 
 5. Create another empty GameObject and name it `CounterViewObject`
 
@@ -93,6 +93,8 @@ The project works with any `Active Input Handling` settings:
 - Coroutine stops automatically
 - Event-driven communication
 - Clean separation of concerns
+- Configurable input button
+- Configurable increment delay
 - Counter value persists between starts
 
 ## License
